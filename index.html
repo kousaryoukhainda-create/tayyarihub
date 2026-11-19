@@ -47,8 +47,16 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
   <div class="grid" id="grid"></div>
 </main>
 <div id="modal"><div class="box" id="box"></div></div>
-<footer>تمام ویڈیوز یوٹیوب کے اصل چینلز کی ملکیت ہیں۔</footer>
+<footer>یہ سائٹ وزٹرز کی گنتی کے لیے Google Analytics استعمال کرتی ہے۔<br>تمام ویڈیوز یوٹیوب کے اصل چینلز کی ملکیت ہیں۔ ہم صرف لنکس شیئر کرتے ہیں۔</footer>
 <script src="data.js"></script>
+<script>
+if(typeof GA_ID==="string"&&/^G-[A-Z0-9]{6,}$/.test(GA_ID)&&GA_ID!=="G-XXXXXXXXXX"){
+  var g=document.createElement("script");g.async=true;g.src="https://www.googletagmanager.com/gtag/js?id="+GA_ID;document.head.appendChild(g);
+}
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag("js",new Date());if(typeof GA_ID==="string")gtag("config",GA_ID);
+function track(n,p){try{gtag("event",n,p)}catch(e){}}
+</script>
 <script>
 var cat="all",qEl=document.getElementById("q"),sEl=document.getElementById("subj"),grid=document.getElementById("grid");
 function esc(s){return String(s||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
@@ -66,7 +74,7 @@ function draw(){
   }).join(""):'<div class="empty">کوئی لیکچر نہیں ملا۔</div>';
 }
 function open_(i){
-  var l=LECTURES[i],id=vid(l.url),h='<h3>'+esc(l.title)+'</h3>';
+  var l=LECTURES[i],id=vid(l.url);track("lecture_open",{lecture:l.title,category:l.cat,subject:l.subject});var h='<h3>'+esc(l.title)+'</h3>';
   if(id){
     h+='<div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/'+id+'" allowfullscreen loading="lazy"></iframe></div>';
     h+='<a class="btn alt" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v='+id+'">اگر ویڈیو نہ چلے تو یوٹیوب پر دیکھیں</a>';
@@ -87,5 +95,4 @@ qEl.oninput=draw;sEl.onchange=draw;
 drawChips();drawSubj();draw();
 </script>
 </body>
-  </html>
-  
+</html>
