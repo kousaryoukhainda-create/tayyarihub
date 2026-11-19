@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b7a53">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%230b7a53%27/%3E%3Ctext x=%2750%27 y=%2770%27 font-size=%2762%27 text-anchor=%27middle%27 fill=%27white%27%3ET%3C/text%3E%3C/svg%3E">
 <title>TayyariHub Pakistan | تیاری ہب پاکستان</title>
 <meta name="description" content="MDCAT، ECAT، CSS اور PPSC کے مفت لیکچرز ایک ہی جگہ۔">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap">
@@ -32,6 +34,9 @@ input,select{width:100%;padding:10px 14px;border:1px solid var(--line);border-ra
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .btn{display:inline-block;margin:8px 0 0 8px;padding:2px 16px;border-radius:10px;background:var(--brand);color:#fff;text-decoration:none;border:0;font:inherit;cursor:pointer}
 .btn.alt{background:transparent;color:var(--text);border:1px solid var(--line)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.bar .btn{margin:0}
+ol{padding-inline-start:20px;margin:6px 0}
 footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
 </style>
 </head>
@@ -41,6 +46,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
   <p>MDCAT، ECAT، CSS اور PPSC کے لیکچرز اور نوٹس ایک ہی جگہ</p>
 </header>
 <main>
+  <div class="bar"><a class="btn" id="wa" target="_blank" rel="noopener">واٹس ایپ پر شیئر کریں</a><button class="btn alt" id="a2hs">ہوم سکرین پر شامل کریں</button></div>
   <input id="q" type="search" placeholder="لیکچر تلاش کریں...">
   <div class="chips" id="chips"></div>
   <select id="subj"></select>
@@ -60,6 +66,9 @@ function track(n,p){try{gtag("event",n,p)}catch(e){}}
 <script>
 var cat="all",qEl=document.getElementById("q"),sEl=document.getElementById("subj"),grid=document.getElementById("grid");
 function esc(s){return String(s||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function plist(u){var m=(u||"").match(/[?&]list=([A-Za-z0-9_-]{10,})/);return m?m[1]:""}
+function base(){return location.origin+location.pathname}
+function waLink(t,hash){return "https://wa.me/?text="+encodeURIComponent(t+"\n"+base()+(hash||""))}
 function vid(u){var m=(u||"").match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([A-Za-z0-9_-]{11})/);return m?m[1]:""}
 function cats(){var a=["all"];LECTURES.forEach(function(l){if(a.indexOf(l.cat)<0)a.push(l.cat)});return a}
 function drawChips(){document.getElementById("chips").innerHTML=cats().map(function(c){return '<button class="chip'+(c===cat?' on':'')+'" data-c="'+esc(c)+'">'+(c==="all"?"تمام":esc(c))+'</button>'}).join("")}
@@ -74,14 +83,18 @@ function draw(){
   }).join(""):'<div class="empty">کوئی لیکچر نہیں ملا۔</div>';
 }
 function open_(i){
-  var l=LECTURES[i],id=vid(l.url);track("lecture_open",{lecture:l.title,category:l.cat,subject:l.subject});var h='<h3>'+esc(l.title)+'</h3>';
-  if(id){
+  var l=LECTURES[i],id=vid(l.url),pl=id?"":plist(l.url);track("lecture_open",{lecture:l.title,category:l.cat,subject:l.subject});var h='<h3>'+esc(l.title)+'</h3>';
+  if(pl){
+    h+='<div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list='+pl+'" allowfullscreen loading="lazy"></iframe></div>';
+    h+='<a class="btn alt" target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list='+pl+'">اگر پلے لسٹ نہ چلے تو یوٹیوب پر دیکھیں</a>';
+  }else if(id){
     h+='<div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/'+id+'" allowfullscreen loading="lazy"></iframe></div>';
     h+='<a class="btn alt" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v='+id+'">اگر ویڈیو نہ چلے تو یوٹیوب پر دیکھیں</a>';
   }else{
     h+='<p>اس لیکچر کا لنک جلد شامل ہوگا۔ فی الحال یوٹیوب پر تلاش کریں:</p><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query='+encodeURIComponent(l.title)+'">یوٹیوب پر تلاش کریں</a>';
   }
   if(l.notes)h+='<a class="btn" target="_blank" rel="noopener" href="'+esc(l.notes)+'">نوٹس ڈاؤن لوڈ کریں</a>';
+  h+='<a class="btn alt" data-s="1" target="_blank" rel="noopener" href="'+waLink(l.title,"#l"+i)+'">واٹس ایپ پر شیئر کریں</a>';
   h+='<button class="btn alt" id="x">بند کریں</button>';
   document.getElementById("box").innerHTML=h;
   document.getElementById("modal").classList.add("show");
@@ -90,9 +103,17 @@ function open_(i){
 function close_(){document.getElementById("modal").classList.remove("show");document.getElementById("box").innerHTML=""}
 document.getElementById("chips").onclick=function(e){var c=e.target.getAttribute("data-c");if(c){cat=c;drawChips();draw()}};
 grid.onclick=function(e){var n=e.target.closest(".card");if(n)open_(+n.getAttribute("data-i"))};
-document.getElementById("modal").onclick=function(e){if(e.target.id==="modal")close_()};
+document.getElementById("modal").onclick=function(e){if(e.target.id==="modal")close_();var s=e.target.closest&&e.target.closest("[data-s]");if(s)track("share",{method:"whatsapp",where:"lecture"})};
+var wa=document.getElementById("wa");wa.href=waLink("TayyariHub Pakistan: MDCAT, ECAT, CSS, PPSC کے لیکچرز ایک ہی جگہ");wa.onclick=function(){track("share",{method:"whatsapp",where:"site"})};
+document.getElementById("a2hs").onclick=function(){
+  track("add_to_home_click");
+  document.getElementById("box").innerHTML='<h3>ہوم سکرین پر شامل کریں</h3><ol><li>Chrome میں اوپر دائیں تین نقطوں (⋮) کا مینو دبائیں۔</li><li><b>Add to Home screen</b> (یا Install app) چنیں۔</li><li><b>Add</b> دبائیں۔ سائٹ کا آئیکن آپ کی ہوم سکرین پر آ جائے گا۔</li></ol><button class="btn alt" id="x">بند کریں</button>';
+  document.getElementById("modal").classList.add("show");document.getElementById("x").onclick=close_;
+};
+window.addEventListener("hashchange",openFromHash);
 qEl.oninput=draw;sEl.onchange=draw;
-drawChips();drawSubj();draw();
+function openFromHash(){var m=location.hash.match(/^#l(\d+)$/);if(m&&LECTURES[+m[1]])open_(+m[1])}
+drawChips();drawSubj();draw();openFromHash();
 </script>
 </body>
 </html>
