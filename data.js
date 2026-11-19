@@ -3,8 +3,8 @@ const GA_ID = "G-XSKY36D14F";
 
 // ===== رابطہ (اختیاری): اپنا واٹس ایپ نمبر بین الاقوامی شکل میں لکھیں، مثلاً "923001234567" (بغیر + اور خالی جگہ کے) =====
 // اسی نمبر پر "ویڈیو نہیں چل رہی" کی رپورٹس آئیں گی۔ خالی رکھیں تو رپورٹ صرف Analytics میں درج ہوگی۔
-const CONTACT_WA = "";
-const CONTACT_EMAIL = "";
+const CONTACT_WA = "923035708275";
+const CONTACT_EMAIL = "kousaryoukhainda@gmail.com";
 
 // ===== آخری کتنے لیکچرز پر "🆕 نیا" کا نشان لگے =====
 const NEW_COUNT = 10;
