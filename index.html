@@ -4,68 +4,89 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0b7a53">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%230b7a53%27/%3E%3Ctext x=%2750%27 y=%2770%27 font-size=%2762%27 text-anchor=%27middle%27 fill=%27white%27%3ET%3C/text%3E%3C/svg%3E">
 <title>TayyariHub Pakistan | تیاری ہب پاکستان</title>
-<meta name="description" content="MDCAT، ECAT، CSS اور PPSC کے مفت لیکچرز ایک ہی جگہ۔">
+<meta name="description" content="MDCAT، ECAT، CSS، PPSC اور FSc کے منتخب لیکچرز ایک ہی جگہ۔ مفت۔">
+<link rel="canonical" href="https://tayyarihub-pk.github.io/lectures/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="TayyariHub تیاری ہب">
+<meta property="og:title" content="TayyariHub Pakistan | تیاری ہب پاکستان">
 <meta property="og:description" content="MDCAT، ECAT، CSS، PPSC اور FSc کے منتخب لیکچرز ایک ہی جگہ۔ مفت۔">
-<meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://tayyarihub-pk.github.io/lectures/">
+<meta property="og:image" content="https://tayyarihub-pk.github.io/lectures/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap">
 <style>
 :root{--bg:#f6f8fb;--card:#fff;--text:#16202e;--muted:#5d6b7e;--brand:#0b7a53;--line:#e1e7ef}
 @media (prefers-color-scheme:dark){:root{--bg:#0f1620;--card:#18222f;--text:#eaf0f7;--muted:#9aa8ba;--brand:#2fbf8a;--line:#2a3646}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Nastaliq Urdu',Tahoma,sans-serif;line-height:2}
-header{background:var(--brand);color:#fff;text-align:center;padding:24px 16px}
-header h1{margin:0;font-size:1.5rem}
-header p{margin:6px 0 0;font-size:.95rem;opacity:.95}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic',Tahoma,sans-serif;line-height:2}
+header{background:var(--brand);color:#fff;text-align:center;padding:20px 16px 14px}
+@media (prefers-color-scheme:dark){header{color:#06251a}}
+.logo svg{width:52px;height:52px}
+header h1{margin:4px 0 0;font-size:1.4rem}
+header p{margin:4px 0 0;font-size:.95rem;opacity:.95}
+.stats{font-size:.85rem!important;opacity:.9}
 main{max-width:1000px;margin:0 auto;padding:16px}
-input,select{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font:inherit;margin-bottom:10px}
+.how{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 14px;margin-bottom:10px;font-size:.85rem;color:var(--muted)}
+input,select{width:100%;min-height:46px;padding:8px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--text);font:inherit;font-size:16px;margin-bottom:10px}
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}
-.chip{flex:none;padding:2px 14px;border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--text);font:inherit;cursor:pointer}
+.chip{flex:none;min-height:44px;padding:2px 16px;border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--text);font:inherit;cursor:pointer}
 .chip.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.catinfo{font-size:.85rem;color:var(--muted);margin:0 0 8px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:10px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;cursor:pointer}
-.card h3{margin:0 0 6px;font-size:1rem;line-height:2}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;cursor:pointer}
+.thumb{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,var(--brand),#064e36);margin-bottom:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.card h3{margin:0 0 4px;font-size:1rem;line-height:2}
 .tag{display:inline-block;font-size:.75rem;color:var(--muted)}
 .star{color:#c98a00;font-size:.8rem}
+.new{font-size:.75rem;color:var(--brand)}
+.done{font-size:.75rem;color:var(--muted)}
+.save{position:absolute;top:16px;left:16px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:1.2rem;cursor:pointer;line-height:1}
+.cont{margin-bottom:10px;padding:6px 14px;border-color:var(--brand)}
 .empty{text-align:center;color:var(--muted);padding:30px}
 #modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:12px;z-index:9}
 #modal.show{display:flex}
 .box{background:var(--card);border-radius:14px;width:100%;max-width:720px;padding:14px;max-height:94vh;overflow:auto}
 .vid{position:relative;padding-top:56.25%;background:#000;border-radius:10px;overflow:hidden}
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.btn{display:inline-block;margin:8px 0 0 8px;padding:2px 16px;border-radius:10px;background:var(--brand);color:#fff;text-decoration:none;border:0;font:inherit;cursor:pointer}
+.btn{display:inline-block;margin:8px 0 0 8px;min-height:44px;padding:6px 16px;border-radius:10px;background:var(--brand);color:#fff;text-decoration:none;border:0;font:inherit;cursor:pointer;line-height:1.8}
+@media (prefers-color-scheme:dark){.btn{color:#06251a}}
 .btn.alt{background:transparent;color:var(--text);border:1px solid var(--line)}
 .bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
 .bar .btn{margin:0}
 ol{padding-inline-start:20px;margin:6px 0}
-.save{float:left;background:none;border:0;font-size:1.3rem;cursor:pointer;color:var(--muted);padding:0 4px;line-height:1.6}
-.new{font-size:.75rem;color:var(--brand)}
-.done{font-size:.75rem;color:var(--muted)}
 .about{max-width:1000px;margin:10px auto 0;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;font-size:.9rem}
 .about h3{margin:0 0 4px;font-size:1rem}
 .about p{margin:4px 0}
 footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
+#top{position:fixed;bottom:16px;left:16px;width:46px;height:46px;border-radius:50%;border:0;background:var(--brand);color:#fff;font-size:1.3rem;cursor:pointer;display:none;z-index:5}
 </style>
 </head>
 <body>
 <header>
+  <div class="logo"><svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#fff"/><path d="M38 28 L74 50 L38 72 Z" fill="#0b7a53"/></svg></div>
   <h1>TayyariHub Pakistan — تیاری ہب پاکستان</h1>
-  <p>MDCAT، ECAT، CSS اور PPSC کے لیکچرز اور نوٹس ایک ہی جگہ</p>
+  <p>MDCAT، ECAT، CSS، PPSC اور FSc کے لیکچرز اور نوٹس ایک ہی جگہ</p>
+  <p class="stats" id="stats"></p>
 </header>
 <main>
+  <div class="how">کیسے استعمال کریں: کیٹیگری چنیں ← لیکچر پر کلک کریں ← پسندیدہ لیکچر کو ☆ سے محفوظ کریں۔</div>
   <div class="bar"><a class="btn" id="wa" target="_blank" rel="noopener">واٹس ایپ پر شیئر کریں</a><button class="btn alt" id="a2hs">ہوم سکرین پر شامل کریں</button></div>
+  <div id="cont"></div>
   <input id="q" type="search" placeholder="لیکچر تلاش کریں...">
   <div class="chips" id="chips"></div>
+  <p class="catinfo" id="catinfo"></p>
   <select id="subj"></select>
   <select id="sort"><option value="f">ترتیب: نمایاں پہلے</option><option value="n">ترتیب: نئے پہلے</option></select>
   <div class="grid" id="grid"></div>
 </main>
-<div id="modal"><div class="box" id="box"></div></div>
 <section class="about" id="about"></section>
-<footer>یہ سائٹ وزٹرز کی گنتی کے لیے Google Analytics استعمال کرتی ہے۔<br>تمام ویڈیوز یوٹیوب کے اصل چینلز کی ملکیت ہیں۔</footer>
+<footer>یہ سائٹ وزٹرز کی گنتی کے لیے Google Analytics استعمال کرتی ہے۔<br>تمام ویڈیوز یوٹیوب کے اصل چینلز کی ملکیت ہیں۔ ہم صرف لنکس شیئر کرتے ہیں۔</footer>
+<div id="modal"><div class="box" id="box"></div></div>
+<button id="top" aria-label="اوپر جائیں">↑</button>
 <script src="data.js"></script>
 <script>
 if(typeof GA_ID==="string"&&/^G-[A-Z0-9]{6,}$/.test(GA_ID)&&GA_ID!=="G-XXXXXXXXXX"){
@@ -79,6 +100,8 @@ function track(n,p){try{gtag("event",n,p)}catch(e){}}
 var cat="all",qEl=document.getElementById("q"),sEl=document.getElementById("subj"),oEl=document.getElementById("sort"),grid=document.getElementById("grid");
 function load(k){try{var v=JSON.parse(localStorage.getItem(k));return Array.isArray(v)?v:[]}catch(e){return[]}}
 function put(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function getLast(){try{return localStorage.getItem("th_last")||""}catch(e){return""}}
+function setLast(t){try{localStorage.setItem("th_last",t)}catch(e){}}
 var saved=load("th_saved"),seen=load("th_seen");
 var NEWN=(typeof NEW_COUNT==="number")?NEW_COUNT:0;
 function esc(s){return String(s||"").replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
@@ -89,8 +112,18 @@ function vid(u){var m=(u||"").match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)(
 function cats(){var a=["all","__saved"];LECTURES.forEach(function(l){if(a.indexOf(l.cat)<0)a.push(l.cat)});return a}
 function drawChips(){document.getElementById("chips").innerHTML=cats().map(function(c){return '<button class="chip'+(c===cat?' on':'')+'" data-c="'+esc(c)+'">'+(c==="all"?"تمام":c==="__saved"?"⭐ محفوظ":esc(c))+'</button>'}).join("")}
 function drawSubj(){var s=["all"];LECTURES.forEach(function(l){if(s.indexOf(l.subject)<0)s.push(l.subject)});sEl.innerHTML=s.map(function(x){return '<option value="'+esc(x)+'">'+(x==="all"?"تمام مضامین":esc(x))+'</option>'}).join("")}
+function drawStats(){
+  var c=[],s=[];LECTURES.forEach(function(l){if(c.indexOf(l.cat)<0)c.push(l.cat);if(s.indexOf(l.subject)<0)s.push(l.subject)});
+  document.getElementById("stats").textContent=LECTURES.length+" لیکچرز • "+c.length+" کیٹیگریز • "+s.length+" مضامین";
+}
+function drawCont(){
+  var t=getLast(),i=-1;LECTURES.forEach(function(l,k){if(l.title===t)i=k});
+  document.getElementById("cont").innerHTML=i<0?"":'<div class="card cont" data-i="'+i+'">▶ جاری رکھیں: <b>'+esc(t)+'</b></div>';
+}
 function draw(){
   var q=qEl.value.trim().toLowerCase(),s=sEl.value,n=LECTURES.length;
+  var info=(typeof CAT_INFO==="object"&&CAT_INFO&&CAT_INFO[cat])||"";
+  document.getElementById("catinfo").textContent=info;
   var list=LECTURES.map(function(l,i){l.i=i;return l}).filter(function(l){
     var okc=cat==="all"||(cat==="__saved"?saved.indexOf(l.title)>=0:l.cat===cat);
     return okc&&(s==="all"||l.subject===s)&&(!q||(l.title+" "+l.teacher+" "+l.subject).toLowerCase().indexOf(q)>=0)
@@ -98,14 +131,18 @@ function draw(){
   if(oEl.value==="n")list.sort(function(a,b){return b.i-a.i});
   else list.sort(function(a,b){return (b.featured?1:0)-(a.featured?1:0)});
   grid.innerHTML=list.length?list.map(function(l){
-    return '<div class="card" data-i="'+l.i+'"><button class="save" data-save="'+l.i+'" aria-label="محفوظ کریں">'+(saved.indexOf(l.title)>=0?"⭐":"☆")+'</button><h3>'+esc(l.title)+'</h3><span class="tag">'+esc(l.cat)+' • '+esc(l.subject)+(l.teacher?' • '+esc(l.teacher):'')+'</span>'+(l.featured?' <span class="star">★ نمایاں</span>':'')+(l.i>=n-NEWN?' <span class="new">🆕 نیا</span>':'')+(seen.indexOf(l.title)>=0?' <span class="done">✓ دیکھ لیا</span>':'')+'</div>'
+    var id=vid(l.url);
+    var th='<div class="thumb">▶'+(id?'<img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+id+'/mqdefault.jpg" onerror="this.remove()">':'')+'</div>';
+    return '<div class="card" data-i="'+l.i+'">'+th+'<button class="save" data-save="'+l.i+'" aria-label="محفوظ کریں">'+(saved.indexOf(l.title)>=0?"⭐":"☆")+'</button><h3>'+esc(l.title)+'</h3><span class="tag">'+esc(l.cat)+' • '+esc(l.subject)+(l.teacher?' • '+esc(l.teacher):'')+'</span>'+(l.featured?' <span class="star">★ نمایاں</span>':'')+(l.i>=n-NEWN?' <span class="new">🆕 نیا</span>':'')+(seen.indexOf(l.title)>=0?' <span class="done">✓ دیکھ لیا</span>':'')+'</div>'
   }).join(""):'<div class="empty">'+(cat==="__saved"?'ابھی کوئی لیکچر محفوظ نہیں۔ کارڈ پر ☆ دبائیں۔':'کوئی لیکچر نہیں ملا۔')+'</div>';
 }
 function open_(i){
   var l=LECTURES[i],id=vid(l.url),pl=id?"":plist(l.url);
   track("lecture_open",{lecture:l.title,category:l.cat,subject:l.subject});
   if(seen.indexOf(l.title)<0){seen.push(l.title);put("th_seen",seen)}
+  setLast(l.title);
   var h='<h3>'+esc(l.title)+'</h3>';
+  if(l.teacher)h+='<p class="tag">استاد / چینل: '+esc(l.teacher)+'</p>';
   if(pl){
     h+='<div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list='+pl+'" allowfullscreen loading="lazy"></iframe></div>';
     h+='<a class="btn alt" target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list='+pl+'">اگر پلے لسٹ نہ چلے تو یوٹیوب پر دیکھیں</a>';
@@ -115,6 +152,7 @@ function open_(i){
   }else{
     h+='<p>اس لیکچر کا لنک جلد شامل ہوگا۔ فی الحال یوٹیوب پر تلاش کریں:</p><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query='+encodeURIComponent(l.title)+'">یوٹیوب پر تلاش کریں</a>';
   }
+  if(l.channel)h+='<a class="btn alt" target="_blank" rel="noopener" href="'+esc(l.channel)+'">استاد کا یوٹیوب چینل دیکھیں</a>';
   if(l.notes)h+='<a class="btn" target="_blank" rel="noopener" href="'+esc(l.notes)+'">نوٹس ڈاؤن لوڈ کریں</a>';
   h+='<a class="btn alt" data-s="1" target="_blank" rel="noopener" href="'+waLink(l.title,"#l"+i)+'">واٹس ایپ پر شیئر کریں</a>';
   h+='<button class="btn alt" id="rep">⚠ ویڈیو نہیں چل رہی؟</button>';
@@ -129,32 +167,43 @@ function open_(i){
     else{this.textContent="شکریہ! رپورٹ درج ہو گئی۔"}
   };
 }
-function close_(){document.getElementById("modal").classList.remove("show");document.getElementById("box").innerHTML="";draw()}
+function close_(){document.getElementById("modal").classList.remove("show");document.getElementById("box").innerHTML="";draw();drawCont()}
 function drawAbout(){
   var num=(typeof CONTACT_WA==="string")?CONTACT_WA.replace(/\D/g,""):"",em=(typeof CONTACT_EMAIL==="string")?CONTACT_EMAIL.trim():"";
   var h='<h3>ہمارے بارے میں</h3><p>TayyariHub ایک مفت پورٹل ہے جو MDCAT، ECAT، CSS، PPSC اور FSc کے منتخب یوٹیوب لیکچرز ایک جگہ جمع کرتا ہے۔ تمام ویڈیوز کے حقوق ان کے اصل چینلز کے پاس ہیں۔ اگر آپ کسی ویڈیو کے مالک ہیں اور اسے ہٹوانا چاہتے ہیں، یا کوئی لیکچر تجویز کرنا چاہتے ہیں تو رابطہ کریں۔</p>';
   if(num)h+='<a class="btn" target="_blank" rel="noopener" href="https://wa.me/'+num+'">واٹس ایپ پر رابطہ</a>';
   if(em)h+='<a class="btn alt" href="mailto:'+esc(em)+'">ای میل</a>';
+  h+='<a class="btn alt" href="terms.html">شرائط و ضوابط</a>';
   h+='<p style="color:var(--muted)">پرائیویسی: گنتی کے لیے Google Analytics استعمال ہوتا ہے۔ آپ کے محفوظ اور دیکھے ہوئے لیکچرز صرف آپ کے فون میں رہتے ہیں۔</p>';
   document.getElementById("about").innerHTML=h;
 }
 document.getElementById("chips").onclick=function(e){var c=e.target.getAttribute("data-c");if(c){cat=c;drawChips();draw()}};
-grid.onclick=function(e){
+function cardClick(e){
   var sv=e.target.closest("[data-save]");
   if(sv){var t=LECTURES[+sv.getAttribute("data-save")].title,k=saved.indexOf(t);if(k<0)saved.push(t);else saved.splice(k,1);put("th_saved",saved);track("bookmark",{lecture:t});draw();return}
   var n=e.target.closest(".card");if(n)open_(+n.getAttribute("data-i"));
-};
+}
+grid.onclick=cardClick;
+document.getElementById("cont").onclick=cardClick;
 document.getElementById("modal").onclick=function(e){if(e.target.id==="modal")close_();var s=e.target.closest&&e.target.closest("[data-s]");if(s)track("share",{method:"whatsapp",where:"lecture"})};
 var wa=document.getElementById("wa");wa.href=waLink("TayyariHub Pakistan: MDCAT, ECAT, CSS, PPSC کے لیکچرز ایک ہی جگہ");wa.onclick=function(){track("share",{method:"whatsapp",where:"site"})};
+var dp=null;
+window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();dp=e});
 document.getElementById("a2hs").onclick=function(){
   track("add_to_home_click");
+  if(dp){dp.prompt();dp=null;return}
   document.getElementById("box").innerHTML='<h3>ہوم سکرین پر شامل کریں</h3><ol><li>Chrome میں اوپر دائیں تین نقطوں (⋮) کا مینو دبائیں۔</li><li><b>Add to Home screen</b> (یا Install app) چنیں۔</li><li><b>Add</b> دبائیں۔ سائٹ کا آئیکن آپ کی ہوم سکرین پر آ جائے گا۔</li></ol><button class="btn alt" id="x">بند کریں</button>';
   document.getElementById("modal").classList.add("show");document.getElementById("x").onclick=close_;
 };
+var topBtn=document.getElementById("top");
+topBtn.onclick=function(){window.scrollTo(0,0)};
+window.addEventListener("scroll",function(){topBtn.style.display=(window.pageYOffset>500)?"block":"none"});
 function openFromHash(){var m=location.hash.match(/^#l(\d+)$/);if(m&&LECTURES[+m[1]])open_(+m[1])}
 window.addEventListener("hashchange",openFromHash);
 qEl.oninput=draw;sEl.onchange=draw;oEl.onchange=draw;
-drawChips();drawSubj();draw();drawAbout();openFromHash();
+if(typeof navigator!=="undefined"&&"serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(function(){})}
+drawStats();drawChips();drawSubj();draw();drawCont();drawAbout();openFromHash();
 </script>
 </body>
-</html>
+  </html>
+  
