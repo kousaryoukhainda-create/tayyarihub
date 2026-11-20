@@ -3,11 +3,22 @@ const GA_ID = "G-XSKY36D14F";
 
 // ===== رابطہ (اختیاری): اپنا واٹس ایپ نمبر بین الاقوامی شکل میں لکھیں، مثلاً "923001234567" (بغیر + اور خالی جگہ کے) =====
 // اسی نمبر پر "ویڈیو نہیں چل رہی" کی رپورٹس آئیں گی۔ خالی رکھیں تو رپورٹ صرف Analytics میں درج ہوگی۔
-const CONTACT_WA = "923035708275";
-const CONTACT_EMAIL = "kousaryoukhainda@gmail.com";
+const CONTACT_WA = "";
+const CONTACT_EMAIL = "";
 
 // ===== آخری کتنے لیکچرز پر "🆕 نیا" کا نشان لگے =====
 const NEW_COUNT = 10;
+
+// ===== ہر کیٹیگری کی مختصر تفصیل (کیٹیگری چنتے وقت نظر آتی ہے) =====
+const CAT_INFO = {
+  "MDCAT": "میڈیکل کالجز کے داخلہ ٹیسٹ کے لیے: بائیولوجی، کیمسٹری، فزکس اور انگلش۔",
+  "ECAT": "انجینئرنگ یونیورسٹیوں کے ٹیسٹ (ECAT / NUST NET) کے لیے: میتھ، فزکس، کیمسٹری۔",
+  "CSS / PMS": "سی ایس ایس اور پی ایم ایس کے لیے: انگلش، پاکستان افیئرز اور کرنٹ افیئرز۔",
+  "PPSC / FPSC": "سرکاری نوکریوں کے ٹیسٹ کے لیے: جنرل نالج، اسلامیات، کرنٹ افیئرز۔",
+  "FSc / Matric": "ایف ایس سی اور میٹرک کے بورڈ کے مضامین۔"
+};
+
+// اختیاری: کسی لیکچر میں teacher: "استاد کا نام" اور channel: "https://www.youtube.com/@چینل" بھی لکھ سکتے ہیں۔ پھر استاد کا نام اور چینل کا بٹن نظر آئے گا۔
 
 // ===== 2) لیکچرز۔ نیا لیکچر شامل کرنے کے لیے کوئی ایک بلاک کاپی کر کے نیچے پیسٹ کریں (آخر میں کوما , ضرور ہو) =====
 // url: یوٹیوب لنک | notes: نوٹس کا لنک (خالی ہو تو بٹن نہیں آئے گا) | featured: true ہو تو نمایاں
@@ -58,3 +69,4 @@ const LECTURES = [
   { title: "FSc Part 2 Physics: Complete Lectures (Playlist)", cat: "FSc / Matric", subject: "Physics", teacher: "", url: "https://www.youtube.com/playlist?list=PLFfDy6WJ1W9sVALZFDeJs1bPZimQDr7mq", notes: "", featured: false },
   { title: "FSc Part 2 Physics: Electrostatics (Playlist)", cat: "FSc / Matric", subject: "Physics", teacher: "", url: "https://www.youtube.com/playlist?list=PLotfPD6FZ5QkRMoiFKmJShM9TJYZBD49y", notes: "", featured: false }
 ];
+   
